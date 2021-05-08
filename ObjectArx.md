@@ -4,6 +4,9 @@ acDocManager->sendStringToExecute(curDoc(), _T("COMMEND\n"));
 ```
 2. 非模态对话框  
 ```cpp
+BEGIN_MESSAGE_MAP(CDlgBarEdit_Bar, CModelessDialog)
+END_MESSAGE_MAP()  
+//消息函数处需要修改底层
 TlControl::CModelessDialog
 pDialog = new CModelessDlg(acedGetAcadFrame());
 pDialog->Create(IDD_DIALOG_MODELESS);
